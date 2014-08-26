@@ -5,7 +5,7 @@ Algoritmos, Datos y Programas 2014 - UNLP Informatica
 
 <h3>Prácticas</h3>
 
-PRÁCTICA 1 - Máximos y mínimos con R-Info.<br/>
+PRÁCTICA 1 - Máximos y mínimos con R-Info. NO SE HARÁN LOS EJERCICIOS DE R-INFO<br/>
 PRÁCTICA 2 - Algoritmica básica.<br/>
 PRÁCTICA 3 - Estructuras de control (procesamientode números + procesamiento de caracteres).<br/>
 PRÁCTICA 4 - Tipos de datos definidos por el Usuario.<br/>
