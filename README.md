@@ -4,21 +4,21 @@ ADP-2014
 Algoritmos, Datos y Programas 2014 - UNLP Informatica
 
 
-Pr·cticas
+Pr√°cticas
 ========
 
-PR¡CTICA 1 - M·ximos y mÌnimos con R-Info
-PR¡CTICA 2 - Algoritmica b·sica
-PR¡CTICA 3 - Estructuras de control (procesamientode n˙meros + procesamiento de caracteres)
-PR¡CTICA 4 - Tipos de datos definidos por el Usuario
-PR¡CTICA 5 - ModularizaciÛ con procedimientos y funciones
-PR¡CTICA 6 - Estructuras de datos - Registros
-PR¡CTICA 7 - Arreglos (vectores)
-PR¡CTICA 7b - Arreglos II (Vectores y matrices)
+PR√ÅCTICA 1 - M√°ximos y m√≠nimos con R-Info.
+PR√ÅCTICA 2 - Algoritmica b√°sica.
+PR√ÅCTICA 3 - Estructuras de control (procesamientode n√∫meros + procesamiento de caracteres).
+PR√ÅCTICA 4 - Tipos de datos definidos por el Usuario.
+PR√ÅCTICA 5 - Modularizaci√≥ con procedimientos y funciones.
+PR√ÅCTICA 6 - Estructuras de datos - Registros.
+PR√ÅCTICA 7 - Arreglos (vectores).
+PR√ÅCTICA 7b - Arreglos II (Vectores y matrices).
 
-PR¡CTICA DE REPASO - Primer Parcial
+PR√ÅCTICA DE REPASO - Primer Parcial.
 
-PR¡CTICA 8 - RecursiÛn
-PR¡CTICA 9 - AlocaciÛn din·mica (punteros)
-PR¡CTICA 10 - Listas
-PR¡CTICA 11 - Merge de Listas
+PR√ÅCTICA 8 - Recursi√≥n.
+PR√ÅCTICA 9 - Alocaci√≥n din√°mica (punteros).
+PR√ÅCTICA 10 - Listas.
+PR√ÅCTICA 11 - Merge de Listas.
