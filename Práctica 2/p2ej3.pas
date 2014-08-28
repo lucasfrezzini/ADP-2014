@@ -4,9 +4,8 @@ mayor cantidad de ventas y la cantidad mínima vendida junto al día en que se p
 
 program eje3p2;
 	var
-		total, num, max, max2, min, dia, i: Integer;
+		num, max, max2, min, dia, i: Integer;
 	begin
-		total := 0;
 		max := -1;
 		min := 99999;
 		for i := 1 to 31 do begin
@@ -14,10 +13,19 @@ program eje3p2;
 			if (num > max) then begin
 				max2 := max;
 				max := num;
-			end;
+				{ Máximo mayor }
+			end
+			else
+				if (num > max) then
+					max2 := num;
+					{ Máximo menor }
 			if (num < min) then begin
 				min = num;
 				dia = i;
+				{ Mínimo y día de ese mínimo }
 			end;
 		end;
+		write('El Primer día de mayor venta, se obtuvo: ', max, );
+		write('El Segundo día de mayor venta, se obtuvo: ', max);
+		write('El día de peor venta fue: ', dia, 'con: ', max);
 	end.
