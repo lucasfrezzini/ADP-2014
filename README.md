@@ -20,6 +20,7 @@ PRÁCTICA 8 - Recursión.<br/>
 PRÁCTICA 9 - Alocación dinámica (punteros).<br/>
 PRÁCTICA 10 - Listas.<br/>
 PRÁCTICA 11 - Merge de Listas.<br/>
+PRÁCTICA 11 - Listas doblemente enlazadas.<br/>
 
 
 ========
