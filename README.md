@@ -1,6 +1,6 @@
 <h2>ADP 2014</h2>
 
-Algoritmos, Datos y Programas 2014 - UNLP Informatica
+Algoritmos, Datos y Programas 2014 - UNLP Informatica - Curso Promoción
 
 
 <h3>Prácticas</h3>
