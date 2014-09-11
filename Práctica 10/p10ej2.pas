@@ -1,111 +1,82 @@
-{2) Escriba un programa que dada una lista de enteros L:
-A Genere una nueva lista que contenga los números pares que aparecen en L.
-B Informe la cantidad de números que comienzan con un dígito impar.
-C Informe el porcentaje de números entre 10 y 50.
-Nota: Modularizar la solución. La lista L debe ser recorrida solo una vez}
+{
+Escriba un programa que dada una lista de enteros L:
+	-Genere una nueva lista que contenga los números pares que aparecen en L.
+	-Informe la cantidad de números que comienzan con un dígito impar. 
+	-Informe el porcentaje de números entre 10 y 50. 
+Nota: Modularizar la solución. La lista L debe ser recorrida solo una vez
+}
 
-program ej2;
+program ejercicio2;
+
 	type
-
-		lista = ^nodo ;
-			nodo = record
-			dato:integer ;
-			sig:lista ;
+		lista = ^nodo;
+		nodo = record
+			dato : Integer;
+			sig: lista;
 		end;
 
-	procedure agregaradelante (var l:lista; num:integer);
+	procedure crearListaPar(var l2:lista; numero: Integer);
 		var
-			nue:lista;
+			nuevo: lista;
 		begin
-			new (nue);
-			nue^.dato:= num;
-			nue^.sig:= l;
-			l:=nue;
+			new(nuevo);
+			nuevo^.dato:= numero;
+			nuevo^.sig:= nil;
+			if (l2 = nil) then
+				l2 = nuevo;
+			else
+				nuevo^.sig:= l2;
+				l2:= nuevo;
 		end;
 
-	function par (num:integer):boolean;
+	procedure primImpar(numero: Integer; var cantImp: Integer);
 		var
-			dig:integer;
-			ok: boolean;
+			dig: Integer;
 		begin
-			ok:= false;
-			dig:= num mod 10;
-			if (dig mod 2 = 0) then ok:= true;
-				par:= ok;
-		end;
-
-	function comienzaimpar (num:integer):boolean;
-		var
-			dig:integer;
-			ok: boolean;
-		begin
-			ok:=false;
-			while (num <> 0) do begin
-			     dig:= num mod 10;
-			     if not (dig mod 2 = 0) then ok:= true;
-			     num:= num div 10;
+			while (numero <> 0) do begin
+				dig:= numero MOD 10;
+				numero:= numero DIV 10;
 			end;
-			comienzaimpar:= ok;
-		end;
-
-
-	procedure crearlista (var l: lista);
-
-		var
-			num:integer;
-
-		begin
-			writeln ('ingrese num');
-			readln (num);
-			while (num<> 999) do begin
-				agregaradelante (l, num);
-				writeln ('ingrese num');
-				readln (num);
+			if (dig DIV 2 = 1) then 
+				cantImp:= cantImp + 1;
 			end;
 		end;
 
-	procedure A (var l2:lista; l:lista;var cant:integer; var cant2:integer; var total:integer);
-
+	function porcentaje(cantidadNum: Integer, total: Integer): real;
+		var
+			porc: real;
 		begin
-
-			while (l <> nil) do begin
-				if (par (l^.dato)) then  
-					agregaradelante (l2, l^.dato);
-				if (comienzaimpar (l^.dato)) then 
-					cant:= cant + 1;
-				if (l^.dato >= 10) and (l^.dato <= 50) then 
-					cant2:= cant2 +1;
-				total:= total +1;
-				l:=l^.sig;
-			end;
-
+			porc:= (cantidadNum/total) * 100;
+			porcentaje:= porc;
 		end;
+
+	procedure recorrerParaAnalizar(l: lista, var l2: lista);
+	var
+		cantImp, cantidadNum, total: Integer;
+	begin
+		cantImp:= 0;
+		cantidadNum:= 0;
+		total:= 0;
+		while (l <> nil) do begin
+			if (l^.dato DIV 2 = 0) then 
+				crearListaPar(l2, l^.dato);
+			primImpar(l^.dato, cantImp);
+			total:= total + 1;
+			if (l^.dato >= 10) and (l^.dato <= 50) then
+				cantidadNum:= cantidadNum + 1;
+			l:= l^.sig;
+		end;
+		write('La cantidad de numeros con el primer digito Impar es: ', cantImp);
+		write('El porcentaje de numeros entre 10 y 50 es: ', porcentaje(cantidadNum, total));
+	end;
 
 	var
-		l,l2:lista;
-		cant, cant2, total: integer;
+		l: lista;
+		l2: lista;
 
 	begin
-		cant:= 0;
-		cant2:=0;
-		total:=0;
+		l2:= nil;
 		l:= nil;
-		l2:=nil;
-		crearlista (l);
-		A (l2, l, cant, cant2, total);
-		writeln ('cantidad de numeros que comienzan con digito impar', cant);
-		writeln ('porcentaje de numeros entre 10 y 50', (cant2*100)DIV total);
-		while (l2 <> nil) do begin
-			writeln('nueva lista l2:', l2^.dato);
-			l2:= l2^.sig;
-		end;
-		readln;
-		readln;
+		crearLista(l); {Se dispone está lista}
+		recorrerParaAnalizar(l, l2);
 	end.
-
-
-
-
-
-
-
