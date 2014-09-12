@@ -54,7 +54,7 @@ program remiseria;
 	procedure contarDistanciaAuto(l2: lista2; var cantRecaudada: real; t: tabla); {l2 sería, l^.viajes_r}
 		begin
 			while (l2 <> nil) do begin
-				cantRecaudada:= cantRecaudada + valorDistHecha(t[l2^.dato.cod]; l2^.dato.dist);
+				cantRecaudada:= cantRecaudada + valorDistHecha(t[l2^.dato.codigo]; l2^.dato.dist);
 				l2:= l2^.sig;
 			end;
 		end;
