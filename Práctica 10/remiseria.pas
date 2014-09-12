@@ -96,7 +96,7 @@ program remiseria;
 		t: tabla;
 	begin
 		l1:= nil;
-		crearTabla(t);
-		crearListaDeRemises(l1);
+		crearTabla(t); {Se dispone}
+		crearListaDeRemises(l1); {Se dispone}
 		recorrerListaDeAutos(l1, t);
 	end.
