@@ -51,7 +51,7 @@ program remiseria;
 			valorDistHecha:= calculo;
 		end;
 
-	procedure contarDistanciaAuto(l2: lista2; var cantRecaudada: real; t: tabla); {l2 sería, l^.viajes_r}
+	procedure contarDistanciaAuto(l2: lista2; var cantRecaudada: real; t: tabla); {l2 sería, l^dato.viajes_r}
 		begin
 			while (l2 <> nil) do begin
 				cantRecaudada:= cantRecaudada + valorDistHecha(t[l2^.dato.codigo]; l2^.dato.dist);
@@ -59,11 +59,44 @@ program remiseria;
 			end;
 		end;
 
-	procedure maximos();
-	begin
-		
-	end;
+	procedure maximos(cantRecaudada: real; patente: stg; var: max1: real; var max2: real; var pat1: stg; var pat2: stg;);
+		begin
+			if (cantRecaudada > max1) then begin
+				max2:= max1;
+				pat2:= pat1;
+				max1:= cantRecaudada;
+				pat1:= patente;
+			end
+			else
+				if (cantRecaudada > max2) then begin
+					max2:= cantRecaudada;
+					pat2:= patente;
+				end;
+		end;
 
+	procedure recorrerListaDeAutos(l1: lista; t: tabla;);
+		var
+			max1, max2, cantRecaudada: real;
+			pat1, pat2: stg;
+		begin
+			cantRecaudada:= 0;
+			max1:= -1;
+			pat1:= '000 000'
+			while (l1 <> nil) do begin
+				contarDistanciaAuto(l1^dato.viajes_r, cantRecaudada, t);
+				maximos(cantRecaudada, l1^.dato.patente, max1, max2, pat1, pat2);
+				l1:= l1^.sig;
+			end;
+			write('El auto que más recaudo en el 2013 fue: ', pat1, 'con un total de: $', max1);
+			write('El segundo auto que más recaudo en el 2013 fue: ', pat2, 'con un total de: $', max2);
+		end;
+
+	var
+		l1: lista;
+		t: tabla;
 	begin
-		Main();
+		l1:= nil;
+		crearTabla(t);
+		crearListaDeRemises(l1);
+		recorrerListaDeAutos(l1, t);
 	end.
