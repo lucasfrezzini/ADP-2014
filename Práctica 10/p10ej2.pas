@@ -37,7 +37,7 @@ program ejercicio2;
 				dig:= numero MOD 10;
 				numero:= numero DIV 10;
 			end;
-			if (dig DIV 2 = 1) then 
+			if (dig MOD 2 = 1) then 
 				cantImp:= cantImp + 1;
 			end;
 		end;
@@ -58,7 +58,7 @@ program ejercicio2;
 		cantidadNum:= 0;
 		total:= 0;
 		while (l <> nil) do begin
-			if (l^.dato DIV 2 = 0) then 
+			if (l^.dato MOD 2 = 0) then 
 				crearListaPar(l2, l^.dato);
 			primImpar(l^.dato, cantImp);
 			total:= total + 1;
