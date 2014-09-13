@@ -57,12 +57,11 @@ program telefonica;
 					act:= act^.sig;
 				end;
 				if (act = ant) thenn begin
-					nuevo^.sig:= L;
 					L:= nuevo;
 				end
 				else
 					ant^.sig:= nuevo;
-					nuevo^.sig:= act;
+				nuevo^.sig:= act;
 		end;
 
 	procedure crearListaOrdenada(var L: lista);
@@ -78,7 +77,8 @@ program telefonica;
 
 	function promedio(durTotal: Integer; totLlam: Integer;): real;
 		begin
-			promedio:= (durTotal / totLlam) * 100;
+			promedio:= durTotal / totLlam;
+			{promedio = sumaTotal/cantTOTAL}
 		end;
 
 	procedure mismoDni(dur: integer; var durTotal: Integer; var totLlam: integer);
@@ -113,12 +113,12 @@ program telefonica;
 				act:= L^.dato.dni;
 				durTotal:= 0;
 				totLlam:= 0;
-				while (act = L^.dato.dni) do begin
-					ant:= L^.dato.dni;
+				while (l <> nil) and (act = L^.dato.dni) do begin {tambien hace l<>nil acá para no salirme de la lista}
+					{con act mantengo el ultimo DNI para los calculos}
 					mismoDni(L^.dato.duracion, durTotal, totLlam);
 					L:= L^.sig;
 				end;
-				write('El promedio de duracion de llamadas para el DNI Titular: ', ant, 
+				write('El promedio de duracion de llamadas para el DNI Titular: ', act, 
 					  'es de: ', promedio(durTotal, totLlam), '%');
 				minimo(durTotal, ant, min1, min2, dni1, dni2);
 			end;

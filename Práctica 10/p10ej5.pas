@@ -41,7 +41,7 @@ program ejercicio5;
 					act:= act^.sig;
 				end;
 				if (act = nil) then begin
-					eliminar:= false
+					eliminar:= false;
 				else
 					if (act = ant) then begin
 						l:= act^.sig;
