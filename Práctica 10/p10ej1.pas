@@ -64,6 +64,7 @@ program ejercicio1;
 			{mientras haya elementos en la lista, los cuento y luego retorno la cantidad}
 			while (L <> nil) do begin
 				cantN:= cantN + 1;
+				L:= L^.sig;
 			end;
 		end;
 
