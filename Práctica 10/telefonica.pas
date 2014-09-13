@@ -56,7 +56,7 @@ program telefonica;
 					ant:= act;
 					act:= act^.sig;
 				end;
-				if (act = ant) thenn begin
+				if (act = ant) then begin
 					L:= nuevo;
 				end
 				else
@@ -104,7 +104,7 @@ program telefonica;
 
 	procedure recorrerLista(L: lista);
 		var
-			act, ant, min1, min2, dni1, dni2:= Integer;
+			act, min1, min2, dni1, dni2:= Integer;
 
 		begin
 			min1:= 99999;
