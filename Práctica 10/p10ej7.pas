@@ -26,7 +26,7 @@ program ejercicio7;
 		fechas = record
 			dia : 1..30;
 			mes: 1..12;
-			año: 1900..2050;
+			ano: 1900..2050;
 		end;
 
 		estudiante = record
@@ -111,7 +111,7 @@ program ejercicio7;
 		var
 			calculo: Integer;
 		begin
-			calculo:= 2014 - e.fecha.año;
+			calculo:= 2014 - e.fecha.ano;
 			if (calculo <= 25) and (calculo >= 20) then
 				crearListaVarones(l2, e);
 		end;
