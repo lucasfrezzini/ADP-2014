@@ -50,7 +50,7 @@ program ejercicio7;
 				read(e.esp);
 				read(e.fecha.dia);
 				read(e.fecha.mes);
-				read(e.fecha.año);
+				read(e.fecha.ano);
 			end;
 		end;
 
@@ -123,6 +123,7 @@ program ejercicio7;
 					informarNombres(l^.dato.esp, l^.dato.nom)
 				else
 					varones(l2, l^.dato);
+				l:= l^.sig;
 			end;
 		end;
 
