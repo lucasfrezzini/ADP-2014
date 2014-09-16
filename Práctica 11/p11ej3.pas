@@ -44,7 +44,7 @@ program ejercicio3;
 			sig: listaProd;
 		end;
 
-	procedure minimo(var l1: listaProd; var l2: listaProd; min: producto);
+	procedure minimo(var l1: listaProd; var l2: listaProd; var min: producto);
 		begin
 			if (l1 = nil) and (l2 = nil) then begin
 				min.cod:= 99999;
