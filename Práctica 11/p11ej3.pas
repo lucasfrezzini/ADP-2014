@@ -71,7 +71,7 @@ program ejercicio3;
 					end;						
 		end;
 
-	procedure agregarAtras(var l3: listaProd; cant: Integer; cod: Integer; ult: listaProd);
+	procedure agregarAtras(var l3: listaProd; cant: Integer; cod: Integer; var ult: listaProd);
 		var
 			nuevo: listaProd;
 		begin
