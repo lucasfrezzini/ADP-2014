@@ -5,10 +5,6 @@ una lista doblemente enlazada. Los números se leen en orden, por ejemplo: 1, 2,
 
 Finalizada la lectura, imprimir en pantalla los números en forma ascendente (de menor a mayor) 
 y descendente (de mayor a menor).
-
-############################################################################################
-### NOTA: Para complicar más el algoritmo, tome como que no vienen en orden los numeros. ###
-############################################################################################
 }
 
 program ejercicio1;
@@ -26,34 +22,22 @@ program ejercicio1;
 			ult: lista;
 		end;
 
-	procedure crearListaOrdenada(var ld: listaDoble; num: Integer);
+	procedure crearLista(var ld: listaDoble; num: Integer);
 		var
-			nuevo, act, ant: lista;
+			nuevo: lista;
 		begin
 			new(nuevo);
 			nuevo^.num:= num;
 			nuevo^.sig:= nil;
 			nuevo^.ant:= nil;
-			if (ld.pri = nil) then begin
+			if (ld.pri = nil) then
 				ld.pri:= nuevo;
-				ld.ult:= nuevo;
-			end
 			else begin
-				act:= ld.pri;
-				ant:= ld.pri;
-				while (act <> nil) and (act^.num < num) do begin
-					ant:= act^.num;
-					act:= act^.sig;
-				end;
-				if (act <> nil) then begin
-					nuevo^.sig:= act;
-					act^.ant:= nuevo;
-				end
-				else
-					ld.ult:= nuevo;
-				ant^.sig:= nuevo;
-				nuevo^.ant:= ant;				
+				ld.ult^.sig:= nuevo;
+				nuevo^.ant:= ld.ult;
 			end;
+			ld.ult:= nuevo;				
+		end;
 				
 		end;
 
@@ -63,7 +47,7 @@ program ejercicio1;
 		begin
 			read(num);
 			while (num <> 0) do begin
-				crearListaOrdenada(ld, num);
+				crearLista(ld, num);
 				read(num);
 			end;
 		end;
