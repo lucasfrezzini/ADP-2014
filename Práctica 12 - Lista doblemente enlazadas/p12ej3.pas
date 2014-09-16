@@ -59,7 +59,7 @@ program ejercicio3;
 					ld.pri^.ant:= nuevo;
 					ld.pri:= nuevo;
 				end
-				else
+				else begin
 					if (act <> nil) then begin
 						nuevo^.sig:= act;
 						act^.ant:= nuevo;
@@ -68,6 +68,8 @@ program ejercicio3;
 						ld.ult:= nuevo;
 					ant^.sig:= nuevo;
 					nuevo^.ant:= ant;
+				end;
+					
 		end;
 
 	procedure leerPersona(var p: persona);
