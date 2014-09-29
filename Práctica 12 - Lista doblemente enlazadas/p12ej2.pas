@@ -34,7 +34,7 @@ program ejercicio2;
 				act:= ld.pri;
 				ant:= ld.pri;
 				while (act <> nil) and (act^.num < num) do begin
-					ant:= act^.num;
+					ant:= act;
 					act:= act^.sig;
 				end;
 				if (act = ant) then begin
