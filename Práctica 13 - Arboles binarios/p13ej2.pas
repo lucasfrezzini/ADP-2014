@@ -67,16 +67,16 @@ program ejercicio2;
 		a: arbol;
 		nombre: str;
 		ok: arbol;
-begin
-	inicializar(a);
-	crearArbol(a);
-	write('¿Qué nombre quiere buscar en el arbol?');
-	read(nombre);
-	ok:= buscarElemento(a);
-	if (ok^ = nil) then
-		write('No se encontro el elemento buscado.')
-	else
-		write('El elemento buscado, existe');
-end.
+	begin
+		inicializar(a);
+		crearArbol(a);
+		write('¿Qué nombre quiere buscar en el arbol?');
+		read(nombre);
+		ok:= buscarElemento(a);
+		if (ok^ = nil) then
+			write('No se encontro el elemento buscado.')
+		else
+			write('El elemento buscado, existe');
+	end.
 
 
