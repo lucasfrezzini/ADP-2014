@@ -42,7 +42,7 @@ program ejercicio4;
 
 		procedure agregarNodo(var a: arbol; e: empleado);
 			begin
-				if (a <> nil) then begin
+				if (a = nil) then begin
 					new(a);
 					a^.dato:= e;
 					a^.hi:= nil;
