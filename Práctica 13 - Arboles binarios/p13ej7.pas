@@ -103,8 +103,7 @@ program ejercicio7;
 
 	procedure inicializar(var a: arbol);
 		begin
-			a^.hi:= nil;
-			a^.hd:= nil;
+			a:= nil;
 		end;
 
 	var

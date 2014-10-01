@@ -80,8 +80,7 @@ program ejercicio3;
 
 	procedure inicializar(var a: arbol);
 		begin
-			a^.hd:= nil;
-			a^.hi:= nil;
+			a:= nil;
 		end;
 
 	var
