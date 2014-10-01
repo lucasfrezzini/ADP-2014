@@ -67,8 +67,10 @@ program ejercicio5;
 			if (a <> nil) then begin
 				if (a^.dato.legajo > 12803) then
 					write('El alumno ', a^.dato.nombre, ' ', a^.dato.apellido, 'posee un legajo mayor a 12803');
-				legSuperior(a^.hi);
-				legSuperior(a^.hd);
+					legSuperior(a^.hi);
+					legSuperior(a^.hd);
+				else
+					legSuperior(a^.hd);
 			end;
 		end;
 
