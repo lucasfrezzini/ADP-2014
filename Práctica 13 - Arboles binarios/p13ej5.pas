@@ -105,5 +105,5 @@ program ejercicio5;
 		crearLista(l); {Se disponen}
 		inicializar(a);
 		crearArbol(a, l);
-		legSuperior(a, inf, sup);
+		legComprendido(a, inf, sup);
 	end.
