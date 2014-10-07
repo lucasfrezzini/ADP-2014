@@ -98,8 +98,7 @@ program arbMartes23;
 			cant: Integer;
 		begin
 			if (a <> nil) then begin
-				cant:= contarAlum(a^.dato.alumnos);
-				write('La cantidad de Alumnos para el año ', a^.dato.ingreso, ' es ', cant);
+				write('La cantidad de Alumnos para el año ', a^.dato.ingreso, ' es ', contarAlum(a^.dato.alumnos));
 				cantAlumnos(a^.hi);
 				cantAlumnos(a^.hd);
 			end;
@@ -124,21 +123,21 @@ program arbMartes23;
 		var
 			act, ant: lista;
 		begin
-			if (l = nil) then
-				ok:= false				
-			else
 				act:= l;
 				ant:= l;
-				while (act <> nil) and (act <> dni) do begin
+				while (act <> nil) and (act^.dato.dni <> dni) do begin
 					ant:= act;
 					act:= act^.sig;
 				end;
-				if (act = ant) then
-					l:= l^.sig;
+				if (act <> nil) then
+				   if (act = l) then
+					 l:= l^.sig;
+				   else
+					  ant^.sig:= act^.sig;
+				   dispose(act);
+				   ok:= true;
 				else
-					ant^.sig:= act^.sig;
-				dispose(act);
-				ok:= true;
+				   ok := false;
 
 		end;
 
@@ -146,9 +145,7 @@ program arbMartes23;
 		begin
 			if (a <> nil) then begin
 				if (a^.dato.ingreso = ingreso) then begin
-					eliminar(a^.dato.alumnos, dni, ok);
-					buscarIngreso(a^.hi, dni, ingreso);
-					buscarIngreso(a^.hd, dni, ingreso);
+					eliminar(a^.dato.alumnos, dni, ok)
 				end
 				else
 					if (ingreso < a^.dato.ingreso) then 

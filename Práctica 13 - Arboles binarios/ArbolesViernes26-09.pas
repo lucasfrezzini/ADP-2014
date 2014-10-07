@@ -148,7 +148,7 @@ program arbolViernes26;
 		ok: Boolean;
 
 	begin
-		a:= nil;
+		l:= nil;
 		a:= nil;
 		crearListaDeArchivos(l); {Se dispone}
 		crearArbol(a, l);
