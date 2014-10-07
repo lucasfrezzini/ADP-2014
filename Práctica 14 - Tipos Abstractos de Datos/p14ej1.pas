@@ -98,6 +98,21 @@ Implementacion
 			consAlt:= t.alt;
 		end;
 
+	function consAng1(t: triangulo): real;
+		begin
+			consAng1:= t.ang1;
+		end;
+
+	function consAng2(t: triangulo): real;
+		begin
+			consAng2:= t.ang2;
+		end;
+
+	function consAng3(t: triangulo): real;
+		begin
+			consAng3:= t.ang3;
+		end;
+
 	procedure CalcularSuperficie(t: triangulo; var sup: real);
 		begin
 			sup:= (t.base * t.alt) / 2;
