@@ -21,6 +21,7 @@ PRÁCTICA 9 - Alocación dinámica (punteros)<br/>
 PRÁCTICA 10 - Listas :white_check_mark:    **Completa + 2 Ejercicios Extras**<br/>
 PRÁCTICA 11 - Merge de Listas :clock1:   *comenzada*<br/>
 PRÁCTICA 12 - Listas doblemente enlazadas<br/>
+PRÁCTICA 13 - Arboles binarios de búsqueda :white_check_mark:    **Completa + Ejercicios Extras**<br/>
 
 
 ========
