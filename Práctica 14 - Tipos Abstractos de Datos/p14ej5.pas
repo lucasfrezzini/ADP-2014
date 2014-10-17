@@ -176,7 +176,7 @@ USES microTAD;
 			rD: regDato;
 		begin
 			leerPersonayDestino(rD);
-			while (rD.nombre = 'ZZZ') do begin
+			while (rD.nombre <> 'ZZZ') do begin
 				buscarDestino(a, rD);
 				leerPersonayDestino(rD);
 			end;
